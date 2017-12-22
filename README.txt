@@ -7,6 +7,9 @@ Thoughts about data structures:
 **POTENTIAL OPTION**
 
 -Linear linked list of linked lists, a linear linked list of alphabet, where each  letter node holds a list of all movies of that letter. 
+OR
+-BST TREE holding directory/entire list. 
+-LL of different categories like favorites? 
 
 -Other options:
 -Favorites Organizer/Category Sorting
