@@ -9,6 +9,7 @@ Thoughts about data structures:
 -Linear linked list of linked lists, a linear linked list of alphabet, where each  letter node holds a list of all movies of that letter. 
 OR
 -BST TREE holding directory/entire list. 
+-BST Tree of LLL... So BST of alphabet, where corresponding alphabet letter has list of all movies with 'M' or 'Z'
 -LL of different categories like favorites? 
 
 -Other options:
