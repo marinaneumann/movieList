@@ -1,4 +1,4 @@
-#include "list.cpp"
+#include "list.h"
 
 
 list::list(){
