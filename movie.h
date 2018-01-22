@@ -5,6 +5,8 @@
 
 //File holds the movie class, its function and data.
 
+void menu();
+char userChooses();
 
 
 class movie{
@@ -19,12 +21,11 @@ class movie{
 		void remove(movie &m);
 		int editstatus(movie &m, char *t, char *y,char stat,int rate);
 		int editstatus(char *t, char *y, char stat, int rate);
-
+		int titleCompare(movie &m);
 	protected:
 		char * title;
 		char *year; 
 		char status; // W for watched, U for unwatched
 		int rating; //0 to 5, 0 is unrated
-	//	int rating; /// scale of 1-5 
 
 };

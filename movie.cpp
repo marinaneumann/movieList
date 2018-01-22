@@ -108,3 +108,21 @@ int movie::editstatus(char *t, char *y, char stat, int rate){
 	return 1;
 }
 
+int movie::titleCompare(movie &m){
+	if(!m.title == NULL){
+		return -99;
+	}
+	if(!m.year == NULL){
+		return -99;
+	}
+	if(this.title < m.title){
+		return 0; 	
+	}else if(strcmp(this.title, m.title)==0){
+		if(this.year < m.year){
+			return 0;
+		}
+		return 1;
+	}
+	
+	return 1; 
+}
