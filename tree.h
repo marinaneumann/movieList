@@ -6,13 +6,14 @@ struct tNode{
 	tNode * left;
 	char letter;
 	list l;
-}
+};
 
 
 class tree{
 	public:
-
+		tree();
+		~tree();
 	private:
-	tNode * root;
+		tNode * root;
 	
-}
+};

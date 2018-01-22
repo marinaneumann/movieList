@@ -6,7 +6,7 @@ list::list(){
 }
 
 list::~list(){
-		node *current = NULL;
+		info *current = NULL;
 	while(head != NULL){
 		current = head->next;	
 		delete head; 

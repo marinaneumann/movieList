@@ -6,6 +6,7 @@ using namespace std;
 movie:: movie(){
 	title = NULL;
 	year = NULL;
+	rating = 0;
 }
 
 movie:: ~movie(){
@@ -15,7 +16,7 @@ movie:: ~movie(){
 }
 
 
-int movie::add(char *t, char *y){
+int movie::add(char *t, char *y, char stat, int rate){
 	this->title = new char[strlen(t)+1];
 	strcpy(this->title, t);
 	this->year = new char[strlen(y)+1];
@@ -23,6 +24,8 @@ int movie::add(char *t, char *y){
 	if(this->title != NULL){
 		return 1;	
 	}
+	this->status = stat;
+	this->rating = rate;
 
 	return 0;
 }
@@ -36,6 +39,8 @@ int movie::copy(movie &m){
 	if(this->title!= NULL){
 		return 1;
 	}
+	this->status = m.status;
+	this->rating = m.rating;
 
 	return 0;
 }
@@ -44,6 +49,12 @@ int movie::copy(movie &m){
 void movie::display(){
 	cout << "Title: " << title << endl;
 	cout << "Year: " << year << endl;
+	if(status == 'W'){
+		cout << "Status: Watched" << endl;
+	}else{
+		cout << "Status: Unwatched" << endl;
+	}
+	cout << "Rating:" << rating << endl;
 }
 
 int movie::display(movie &m){
@@ -52,8 +63,48 @@ int movie::display(movie &m){
 	}
 	cout << "Title:" << m.title << endl;
 	cout << "Year: " << m.year << endl;
-
+	if(m.status == 'W'){
+		cout << "Status: Watched" << endl;
+	}else{
+		cout << "Status: Unwatched" << endl;
+	}
+	cout << "Rating:" << m.rating << endl;
 	return 1;
 }
 
+void movie::remove(){
+	delete title;
+	delete year;
+	title = year = NULL;
+} 
+
+void movie::remove(movie &m){
+	delete m.title;
+	delete m.year;
+	m.title = m.year = NULL;
+}
+
+//Function allows for user to change movie status and rate it accordingly. 
+int movie::editstatus(movie &m, char *t, char *y, char stat, int rate){
+	if(strcmp(m.title, t) !=0){
+		return 0;
+	}
+	if(strcmp(m.year, y) != 0){
+		return 0;
+	}
+	m.status = status;
+	m.rating = rate;
+	return 1;
+	
+} 
+
+
+int movie::editstatus(char *t, char *y, char stat, int rate){
+	if((strcmp(this->title, t)!= 0) && (strcmp(this->year, y)!=0)){
+		return 0;
+	}
+	this->status = stat;
+	this->rating = rate;
+	return 1;
+}
 

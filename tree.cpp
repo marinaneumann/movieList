@@ -1,6 +1,6 @@
 #include "tree.h"
 
-using namestpace std;
+using namespace std;
 
 
 tree::tree(){

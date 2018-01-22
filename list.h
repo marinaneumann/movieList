@@ -2,9 +2,9 @@
 
 
 struct info{
-	node *next;
-	movie info;
-}
+	info *next;
+	movie data;
+};
 
 class list{
 	public:
@@ -12,4 +12,4 @@ class list{
 		~list();
 	private:
 		info *head;
-}
+};
