@@ -17,4 +17,6 @@ class list{
 		int remove();
 	private:
 		info *head;
+		//int add(movie &m, info *& head);
+		
 };
